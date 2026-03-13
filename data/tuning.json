@@ -42,33 +42,33 @@
       "idle": {
         "row": 0,
         "frames": 4,
-        "frameDelay": 10
+        "frameDelay": 15
       },
       "run": {
         "row": 1,
-        "frames": 4,
-        "frameDelay": 3
+        "frames": 3,
+        "frameDelay": 10
       },
       "jump": {
-        "row": 2,
-        "frames": 3,
+        "row": 1,
+        "frames": 2,
         "hold": true,
         "frame": 0
       },
       "attack": {
-        "row": 3,
-        "frames": 6,
-        "frameDelay": 2
+        "row": 4,
+        "frames": 3,
+        "frameDelay": 10
       },
       "hurtPose": {
-        "row": 5,
-        "frames": 4,
+        "row": 2,
+        "frames": 3,
         "hold": true,
-        "frame": 1
+        "frame": 2
       },
       "death": {
-        "row": 5,
-        "frames": 4,
+        "row": 3,
+        "frames": 2,
         "frameDelay": 16
       }
     }
@@ -117,19 +117,19 @@
 
     "anims": {
       "run": {
-        "row": 1,
-        "frames": 4,
-        "frameDelay": 3
+        "row": 0,
+        "frames": 1,
+        "frameDelay": 10
       },
       "throwPose": {
-        "row": 4,
+        "row": 0,
         "frames": 1,
         "hold": true,
         "frame": 0
       },
       "death": {
-        "row": 5,
-        "frames": 4,
+        "row": 0,
+        "frames": 1,
         "frameDelay": 16
       }
     }

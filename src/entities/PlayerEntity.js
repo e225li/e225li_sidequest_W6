@@ -63,10 +63,10 @@ export class PlayerEntity {
     this.KNOCKBACK_X = Number(this.tuning.player?.knockbackX ?? 2.0);
     this.KNOCKBACK_Y = Number(this.tuning.player?.knockbackY ?? 3.2);
 
-    this.COLLIDER_W = Number(this.tuning.player?.w ?? 18);
-    this.COLLIDER_H = Number(this.tuning.player?.h ?? 12);
+    this.COLLIDER_W = Number(this.tuning.player?.collider?.w ?? 18);
+    this.COLLIDER_H = Number(this.tuning.player?.collider?.h ?? 12);
 
-    this.ANI_OFFSET_Y = Number(this.tuning.player?.aniOffsetY ?? -8);
+    this.ANI_OFFSET_Y = Number(this.tuning.player?.anisOffset?.y ?? -8);
 
     // attack window
     this.ATTACK_START = Number(this.tuning.player?.attackStartFrame ?? 4);
@@ -238,7 +238,8 @@ export class PlayerEntity {
   // animation (visual state)
   // -----------------------
   applyAnimation({ grounded, won }) {
-    if (!this.sprite?.anis || Object.keys(this.sprite.anis).length === 0) return;
+    if (!this.sprite?.anis || Object.keys(this.sprite.anis).length === 0)
+      return;
 
     // ---- DEAD: play once, then hold last frame (prevents infinite loop)
     if (this.dead) {
@@ -310,7 +311,8 @@ export class PlayerEntity {
     if (!this.sprite) return;
 
     if (!this.dead && this.invulnTimer > 0) {
-      this.sprite.tint = Math.floor(this.invulnTimer / 4) % 2 === 0 ? "#ff5050" : "#ffffff";
+      this.sprite.tint =
+        Math.floor(this.invulnTimer / 4) % 2 === 0 ? "#ff5050" : "#ffffff";
     } else {
       this.sprite.tint = "#ffffff";
     }
