@@ -148,7 +148,8 @@ async function boot() {
 
   // background music by Jurij (Pixabay) [4]
   soundManager.load("music", "assets/sfx/music.wav");
-
+  // Ensure music is loaded before trying to play it (prevents p5.sound errors).
+  await soundManager.whenReady("music");
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
   parallaxLayers = defs
