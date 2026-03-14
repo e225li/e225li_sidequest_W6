@@ -134,19 +134,19 @@ async function boot() {
   soundManager = new SoundManager();
 
   // jump sound effect from Pixabay [5]
-  // soundManager.load("jump", "assets/sfx/jump.mp3");
+  soundManager.load("jump", "assets/sfx/jump.wav");
 
   // fire extinguisher collect sound effect from Pixabay [4]
-  // soundManager.load("collect", "assets/sfx/gemCollect.mp3");
+  soundManager.load("collect", "assets/sfx/gemCollect.wav");
 
   // enemy hit sound effect from Pixabay [3]
-  // soundManager.load("hitEnemy", "assets/sfx/hitEnemy.mp3");
+  soundManager.load("hitEnemy", "assets/sfx/hitEnemy.wav");
 
   // player damage sound effect from Pixabay [2]
-  // soundManager.load("damage", "assets/sfx/receiveDamage.mp3");
+  soundManager.load("damage", "assets/sfx/receiveDamage.wav");
 
   // background music "Song Of The Forge" by Scott Buckley [1]
-  // soundManager.load("music", "assets/sfx/music.mp3");
+  soundManager.load("music", "assets/sfx/music.wav");
 
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
