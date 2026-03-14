@@ -112,6 +112,7 @@ const START_LEVEL_ID = "ex5_level1";
 // Boot flags
 let bootStarted = false;
 let bootDone = false;
+let bootError = null;
 
 // ------------------------------------------------------------
 // Boot pipeline (async) — runs from setup()
@@ -246,11 +247,23 @@ function setup() {
 
   boot().catch((err) => {
     console.error("BOOT FAILED:", err);
-    // loop stays stopped so the sketch doesn't spam errors
+    bootError = err;
+    // stop the loop and draw the error message
+    noLoop();
+    loop();
   });
 }
 
 function draw() {
+  if (bootError) {
+    background(20);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(14);
+    text("BOOT FAILED:\n" + (bootError.message || bootError), width / 2, height / 2);
+    noLoop();
+    return;
+  }
   if (!bootDone || !levelPkg || !game) return;
 
   const viewW = levelPkg.view.viewW;
