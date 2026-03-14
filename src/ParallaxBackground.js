@@ -15,6 +15,7 @@
 // - main.js owns parallax construction using level.view.parallax from levels.json.
 // - This stays VIEW-only so it can be swapped or removed without touching gameplay.
 
+// industrial zone background tileset from CraftPix [6]
 export class ParallaxBackground {
   /**
    * @param {Object} layers
