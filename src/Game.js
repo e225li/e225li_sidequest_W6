@@ -84,7 +84,8 @@ export class Game {
     this._wireEventListeners();
 
     // Play music once it has loaded; p5.sound can throw if play() is called too early.
-    this.sound?.whenReady("music")
+    this.sound
+      ?.whenReady("music")
       .then((musicSound) => {
         musicSound.setLoop(true);
         musicSound.play();
