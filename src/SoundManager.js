@@ -21,7 +21,7 @@ export class SoundManager {
   }
 
   load(name, path) {
-    this.sfx[name] = loadSound(path);
+    this.sfx[name] = loadSound(path, () => {}, () => {});
   }
 
   play(name) {
