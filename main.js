@@ -133,6 +133,21 @@ async function boot() {
   // (AudioContext may still be locked until the user clicks/presses a key.)
   soundManager = new SoundManager();
 
+  // jump sound effect from Pixabay [5]
+  soundManager.load("jump", "assets/sfx/jump.mp3");
+
+  // fire extinguisher collect sound effect from Pixabay [4]
+  soundManager.load("collect", "assets/sfx/gemCollect.mp3");
+
+  // enemy hit sound effect from Pixabay [3]
+  soundManager.load("hitEnemy", "assets/sfx/hitEnemy.mp3");
+
+  // player damage sound effect from Pixabay [2]
+  soundManager.load("damage", "assets/sfx/receiveDamage.mp3");
+
+  // background music "Song Of The Forge" by Scott Buckley [1]
+  soundManager.load("music", "assets/sfx/music.mp3");
+
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
   parallaxLayers = defs
