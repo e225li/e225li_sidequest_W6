@@ -146,7 +146,7 @@ async function boot() {
   soundManager.load("damage", "assets/sfx/receiveDamage.wav");
 
   // background music "Song Of The Forge" by Scott Buckley [1]
-  soundManager.load("music", "assets/sfx/music.wav");
+  // soundManager.load("music", "assets/sfx/music.wav");
 
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
