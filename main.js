@@ -146,7 +146,7 @@ async function boot() {
   // player damage sound effect from Pixabay [2]
   soundManager.load("damage", "assets/sfx/receiveDamage.wav");
 
-  // background music "Song Of The Forge" by Scott Buckley [1]
+  // background music by Jurij (Pixabay) [4]
   soundManager.load("music", "assets/sfx/music.wav");
 
   // --- Parallax layer defs (VIEW) ---
@@ -260,7 +260,14 @@ function draw() {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(14);
-    text("BOOT FAILED:\n" + (bootError.message || bootError), width / 2, height / 2);
+    textWrap(WORD);
+
+    const errText =
+      "BOOT FAILED:\n" +
+      (bootError.message || bootError) +
+      (bootError.stack ? "\n\n" + bootError.stack : "");
+
+    text(errText, 20, 20, width - 40, height - 40);
     noLoop();
     return;
   }
